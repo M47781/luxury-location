@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CarRent - Location de voitures facile</title>
+<title>Luxury Location</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -17,20 +17,18 @@
 
 body{
   min-height:100vh;
-  font-family: 'Poppins', sans-serif, system-ui;
+  font-family:Poppins,system-ui;
   background:
-    radial-gradient(circle at 20% 20%, rgba(242,227,182,.15), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(184,155,94,.15), transparent 45%),
-    linear-gradient(-45deg,#0B0B0B,#1a1a1a,#0B0B0B);
+    radial-gradient(circle at 20% 20%, rgba(242,227,182,.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(184,155,94,.25), transparent 45%),
+    linear-gradient(-45deg,#0B0B0B,#D4AF37,#B89B5E,#0B0B0B);
   background-size:300% 300%;
-  animation:luxuryMove 15s ease infinite;
+  animation:luxuryMove 20s ease-in-out infinite;
   display:flex;
   flex-direction:column;
   align-items:center;
   padding:20px;
-  color: white;
 }
-
 @keyframes luxuryMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -42,58 +40,63 @@ body{
   width:100%;
   padding:36px 26px;
   border-radius:26px;
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.65);
   border:1px solid var(--gold-dark);
-  backdrop-filter:blur(15px);
-  box-shadow:0 25px 60px rgba(0,0,0,0.8);
+  backdrop-filter:blur(14px);
+  box-shadow:0 25px 60px rgba(0,0,0,.7);
   text-align:center;
+  margin-bottom:30px;
 }
 
+body[dir="rtl"]{direction:rtl}
+
 .logo{
-  width:110px;
-  height:110px;
+  width:120px;
   border-radius:50%;
   border:2px solid var(--gold);
   margin:0 auto 20px auto;
-  object-fit: cover;
   display:block;
-  box-shadow: 0 0 15px rgba(212,175,55,0.3);
 }
 
 h1{
   color:var(--gold-light);
-  font-size: 24px;
-  margin-bottom:5px;
-  letter-spacing: 1px;
+  margin-bottom:10px;
 }
 
 .bio{
-  color:#ccc;
+  color:#dcdcdc;
   font-size:14px;
-  line-height:1.6;
+  line-height:1.8;
   margin-bottom:25px;
+}
+body[dir="rtl"] .bio{color:#fff}
+
+.slogan-translated{
+  display:block;
+  margin-top:6px;
+  color:var(--gold);
+  font-style:italic;
 }
 
 .lang-switch{
   display:flex;
   justify-content:center;
-  gap:10px;
-  margin-bottom:20px;
+  gap:8px;
+  margin-bottom:25px;
 }
 .lang-switch button{
   background:transparent;
-  border:1px solid var(--gold-dark);
-  color:var(--gold-light);
-  padding:6px 15px;
-  border-radius:15px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:8px 20px;
+  border-radius:20px;
   cursor:pointer;
-  font-size: 12px;
   transition:.3s;
 }
-.lang-switch button.active{
-  background:var(--gold);
+.lang-switch button.active,
+.lang-switch button:hover{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
   color:#000;
-  border-color: var(--gold);
 }
 
 .btn{
@@ -102,43 +105,61 @@ h1{
   justify-content:center;
   gap:12px;
   margin:12px 0;
-  padding:14px 20px;
-  border-radius:30px;
+  padding:15px 20px;
+  border-radius:34px;
   text-decoration:none;
   font-size:15px;
   color:#fff;
   background:var(--glass-bg);
   border:1px solid var(--glass-border);
-  transition:.4s;
+  backdrop-filter:blur(8px);
+  transition:.30s;
   position:relative;
   overflow:hidden;
 }
+.btn img{width:24px;height:24px}
 
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(120deg, rgba(212,175,55,.4), rgba(212,175,55,.1), rgba(212,175,55,.4));
+  transform:skewX(-20deg);
+  transition:.4s;
+}
+.btn:hover::before{left:200%}
 .btn:hover{
-  background: rgba(212,175,55,0.1);
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(212,175,55,.45);
   border-color:var(--gold);
-  transform: translateY(-2px);
 }
 
-.btn img{width:22px;height:22px}
+#footer{
+  color:#9a9a9a;
+  font-size:12px;
+  margin-top:25px;
+}
 
-/* Carousel */
 .scroll-wrapper{
   width:100%;
-  border-radius:15px;
+  border-radius:16px;
   overflow:hidden;
+  position:relative;
   margin:20px 0;
-  border: 1px solid rgba(212,175,55,0.2);
 }
+
 .scroll-track{
   display:flex;
   gap:10px;
-  animation:scroll 25s linear infinite;
+  animation:scroll 30s linear infinite;
 }
+
 .scroll-track img{
-  height:130px;
-  border-radius:10px;
+  height:120px;
+  border-radius:16px;
   flex:0 0 auto;
+  object-fit:cover;
 }
 
 @keyframes scroll{
@@ -146,9 +167,11 @@ h1{
   100% {transform: translateX(-50%);}
 }
 
-#footer{
-  color:#666;
-  font-size:11px;
+.map-container{
+  width:100%;
+  height:250px;
+  border-radius:20px;
+  overflow:hidden;
   margin-top:20px;
 }
 </style>
@@ -156,84 +179,107 @@ h1{
 <body>
 
 <div class="container">
-  <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711757/photo_5789882967944531100_x_1_iajil4.png" class="logo">
+<img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711757/photo_5789882967944531100_x_1_iajil4.png" class="logo">
 
-  <div class="lang-switch">
-    <button id="btn-fr" onclick="setLang('fr')">FR</button>
-    <button id="btn-ar" onclick="setLang('ar')">AR</button>
-    <button id="btn-en" onclick="setLang('en')">EN</button>
+<div class="lang-switch">
+  <button id="btn-fr" onclick="setLang('fr')">FR</button>
+  <button id="btn-ar" onclick="setLang('ar')">AR</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<h1>Luxury Location</h1>
+<p id="bio" class="bio"></p>
+
+<div class="scroll-wrapper">
+  <div class="scroll-track">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531102_y_qogxby.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531110_y_qoythz.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531107_y_yqxfc0.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531108_y_affjmh.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531106_y_royl0l.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531109_y_ypl0q8.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg">
   </div>
+</div>
 
-  <h1>CarRent</h1>
-  <p style="color:var(--gold); font-size: 14px; margin-bottom: 10px;">Location de voitures facile</p>
-  <p id="bio" class="bio"></p>
+<a class="btn" id="wa-link" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png"><span id="txt-wa"></span></a>
+<a class="btn" id="email-link" href="mailto:Osmandz2019@gmail.com"><img src="https://cdn-icons-png.flaticon.com/128/281/281769.png"><span id="txt-email"></span></a>
+<a class="btn" id="site-link" href="https://luxury-location.vercel.app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/841/841364.png"><span id="txt-site"></span></a>
+<a class="btn" id="fb-link" href="https://www.facebook.com/share/17yRzySM8P/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733547.png"><span id="txt-fb"></span></a>
+<a class="btn" id="insta-link" href="https://www.instagram.com/luxury_location_de_voiture" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733558.png"><span id="txt-insta"></span></a>
+<a class="btn" id="tiktok-link" href="https://www.tiktok.com/@locationvoituredeluxe5" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png"><span id="txt-tiktok"></span></a>
 
-  <div class="scroll-wrapper">
-    <div class="scroll-track">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531102_y_qogxby.jpg">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531110_y_qoythz.jpg">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
-      <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg">
-    </div>
-  </div>
+<div class="map-container">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12803.46820562621!2d2.9774643!3d36.6536965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fa6930030093d%3A0x644e5907409f4851!2sBaba%20Hassen!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
 
-  <a class="btn" id="wa-link" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png">
-    <span id="txt-wa">WhatsApp</span>
-  </a>
-
-  <a class="btn" href="https://www.instagram.com/luxury_location_de_voiture" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/128/733/733558.png">
-    <span>Instagram</span>
-  </a>
-
-  <a class="btn" href="https://www.tiktok.com/@locationvoituredeluxe5" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png">
-    <span>TikTok</span>
-  </a>
-
-  <p id="footer"></p>
+<p id="footer"></p>
 </div>
 
 <script>
 const content={
-  fr:{
-    bio:"Simplifiez vos déplacements avec notre flotte d'exception. Confort et rapidité garantis.",
-    wa:"Contactez-nous sur WhatsApp",
-    footer:"© 2026 CarRent • Baba Hassen, Alger",
-    msg:"Bonjour CarRent, je souhaite louer une voiture."
-  },
-  ar:{
-    bio:"كراء السيارات أصبح أسهل معنا. أسطول متنوع وخدمة سريعة.",
-    wa:"تواصل معنا عبر واتساب",
-    footer:"© 2026 CarRent • بابا حسن، الجزائر",
-    msg:"السلام عليكم، أريد استئجار سيارة من فضلك."
-  },
-  en:{
-    bio:"Car rental made easy. Choose your ride from our premium fleet today.",
-    wa:"Contact us on WhatsApp",
-    footer:"© 2026 CarRent • Baba Hassen, Algiers",
-    msg:"Hello CarRent, I would like to rent a car."
-  }
+fr:{
+bio:"Confort, puissance et élégance<br><span class='slogan-translated'>Location de voitures de luxe • Livraison • Réservation</span>",
+wa:"WhatsApp",email:"Email",site:"Site officiel",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
+msg:"Bonjour, je souhaite des informations sur la location de voitures de luxe."
+},
+ar:{
+bio:"كراء سيارات فاخرة ، قوة وأناقة ✨<br><span class='slogan-translated'>سيارات جديدة • خدمة راقية • حجز سريع</span>",
+wa:"واتساب",email:"البريد الإلكتروني",site:"الموقع الرسمي",fb:"فايسبوك",insta:"إنستغرام",tiktok:"تيك توك",
+footer:"Luxury Location • بابا حسن، الجزائر • 2026",dir:"rtl",
+msg:"السلام عليكم، حاب نستفسر على كراء السيارات الفاخرة."
+},
+en:{
+bio:"Luxury in motion combining comfort and elegance<br><span class='slogan-translated'>Premium luxury car rental</span>",
+wa:"WhatsApp",email:"Email",site:"Official website",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
+msg:"Hello, I would like information about luxury car rental."
+}
 };
 
-const waNumber = "213559309680"; 
+// MODIFIED NUMBER HERE
+const waNumber="213559309680"; 
+
+const bio=document.getElementById("bio");
+const footer=document.getElementById("footer");
+const txtWa=document.getElementById("txt-wa");
+const txtEmail=document.getElementById("txt-email");
+const txtSite=document.getElementById("txt-site");
+const txtFb=document.getElementById("txt-fb");
+const txtInsta=document.getElementById("txt-insta");
+const txtTiktok=document.getElementById("txt-tiktok");
+const waLink=document.getElementById("wa-link");
+
+let lang = navigator.language.slice(0,2);
+if(!["fr","ar","en"].includes(lang)) lang="fr";
 
 function setLang(l){
-  document.getElementById("bio").innerText = content[l].bio;
-  document.getElementById("txt-wa").innerText = content[l].wa;
-  document.getElementById("footer").innerText = content[l].footer;
-  document.getElementById("wa-link").href = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(content[l].msg);
-  
-  document.querySelectorAll(".lang-switch button").forEach(b => b.classList.remove("active"));
-  document.getElementById("btn-" + l).classList.add("active");
-  document.body.dir = (l === 'ar') ? 'rtl' : 'ltr';
+document.body.dir=content[l].dir;
+bio.innerHTML=content[l].bio;
+footer.innerText=content[l].footer;
+txtWa.innerText=content[l].wa;
+txtEmail.innerText=content[l].email;
+txtSite.innerText=content[l].site;
+txtFb.innerText=content[l].fb;
+txtInsta.innerText=content[l].insta;
+txtTiktok.innerText=content[l].tiktok;
+waLink.href="https://wa.me/"+waNumber+"?text="+encodeURIComponent(content[l].msg);
+document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.remove("active"));
+document.getElementById("btn-"+l).classList.add("active");
 }
 
-setLang('fr'); // Default language
+setLang(lang);
 </script>
-
 </body>
 </html>
