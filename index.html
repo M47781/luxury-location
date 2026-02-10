@@ -35,7 +35,6 @@ body{
   100%{background-position:0% 50%}
 }
 
-/* ===== Container ===== */
 .container{
   max-width:480px;
   width:100%;
@@ -79,7 +78,6 @@ body[dir="rtl"] .bio{color:#fff}
   font-style:italic;
 }
 
-/* Language switch */
 .lang-switch{
   display:flex;
   justify-content:center;
@@ -101,7 +99,6 @@ body[dir="rtl"] .bio{color:#fff}
   color:#000;
 }
 
-/* Buttons */
 .btn{
   display:flex;
   align-items:center;
@@ -144,7 +141,6 @@ body[dir="rtl"] .bio{color:#fff}
   margin-top:25px;
 }
 
-/* ===== Image Carousel inside container ===== */
 .scroll-wrapper{
   width:100%;
   border-radius:16px;
@@ -171,7 +167,6 @@ body[dir="rtl"] .bio{color:#fff}
   100% {transform: translateX(-50%);}
 }
 
-/* ===== Map container ===== */
 .map-container{
   width:100%;
   height:250px;
@@ -195,7 +190,6 @@ body[dir="rtl"] .bio{color:#fff}
 <h1>Luxury Location</h1>
 <p id="bio" class="bio"></p>
 
-<!-- ===== Carousel inside container ===== -->
 <div class="scroll-wrapper">
   <div class="scroll-track">
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
@@ -206,13 +200,11 @@ body[dir="rtl"] .bio{color:#fff}
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531108_y_affjmh.jpg">
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531106_y_royl0l.jpg">
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531109_y_ypl0q8.jpg">
-    <!-- Duplicate for smooth infinite scroll -->
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg">
     <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg">
   </div>
 </div>
 
-<!-- Buttons -->
 <a class="btn" id="wa-link" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png"><span id="txt-wa"></span></a>
 <a class="btn" id="email-link" href="mailto:Osmandz2019@gmail.com"><img src="https://cdn-icons-png.flaticon.com/128/281/281769.png"><span id="txt-email"></span></a>
 <a class="btn" id="site-link" href="https://luxury-location.vercel.app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/841/841364.png"><span id="txt-site"></span></a>
@@ -220,10 +212,9 @@ body[dir="rtl"] .bio{color:#fff}
 <a class="btn" id="insta-link" href="https://www.instagram.com/luxury_location_de_voiture" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733558.png"><span id="txt-insta"></span></a>
 <a class="btn" id="tiktok-link" href="https://www.tiktok.com/@locationvoituredeluxe5" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png"><span id="txt-tiktok"></span></a>
 
-<!-- Google Map -->
 <div class="map-container">
   <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13056.754979191296!2d2.958421939486345!3d36.688356297096564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb6db2f56a1a5%3A0x7df8748d74df3db1!2sMXVC%2BQ33%20Baba%20Hassen!5e0!3m2!1sen!2sdz!4v1707590000000!5m2!1sen!2sdz" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12803.46820562621!2d2.9774643!3d36.6536965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fa6930030093d%3A0x644e5907409f4851!2sBaba%20Hassen!5e0!3m2!1sfr!2sdz!4v1700000000000!5m2!1sfr!2sdz" 
     width="100%" 
     height="100%" 
     style="border:0;" 
@@ -233,7 +224,7 @@ body[dir="rtl"] .bio{color:#fff}
 </div>
 
 <p id="footer"></p>
-</div> <!-- end container -->
+</div>
 
 <script>
 const content={
@@ -244,7 +235,7 @@ footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
 msg:"Bonjour, je souhaite des informations sur la location de voitures de luxe."
 },
 ar:{
-bio:"كراء سيارات فاخرة  ، قوة وأناقة ✨<br><span class='slogan-translated'>سيارات جديدة • خدمة راقية • حجز سريع</span>",
+bio:"كراء سيارات فاخرة ، قوة وأناقة ✨<br><span class='slogan-translated'>سيارات جديدة • خدمة راقية • حجز سريع</span>",
 wa:"واتساب",email:"البريد الإلكتروني",site:"الموقع الرسمي",fb:"فايسبوك",insta:"إنستغرام",tiktok:"تيك توك",
 footer:"Luxury Location • بابا حسن، الجزائر • 2026",dir:"rtl",
 msg:"السلام عليكم، حاب نستفسر على كراء السيارات الفاخرة."
@@ -257,7 +248,9 @@ msg:"Hello, I would like information about luxury car rental."
 }
 };
 
-const waNumber="213770074788";
+// MODIFIED NUMBER HERE
+const waNumber="213559309680"; 
+
 const bio=document.getElementById("bio");
 const footer=document.getElementById("footer");
 const txtWa=document.getElementById("txt-wa");
