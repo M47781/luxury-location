@@ -98,7 +98,7 @@ h1{
   color:#141111;
 }
 
-/* === Image Carousel === */
+/* === Carousel === */
 .scroll-wrapper{
   width:100%;
   border-radius:16px;
@@ -114,7 +114,6 @@ h1{
   animation:scroll 20s linear infinite;
 }
 
-/* Pause animation on Hover */
 .scroll-wrapper:hover .scroll-track {
   animation-play-state: paused;
 }
@@ -127,22 +126,18 @@ h1{
   transition: 0.2s;
 }
 
-.scroll-track img:hover {
-    filter: brightness(1.2);
-}
-
 @keyframes scroll{
   0% {transform: translateX(0);}
   100% {transform: translateX(-50%);}
 }
 
-/* === Lightbox (Zoom Effect) === */
+/* === Lightbox === */
 .lightbox {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.9);
-  display: none; /* hidden by default */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -183,9 +178,8 @@ h1{
   backdrop-filter:blur(8px);
   transition:.35s;
   position:relative;
-  overflow:hidden;
 }
-.btn img{width:24px;height:24px}
+.btn img{width:24px;height:24px;object-fit:contain}
 
 .btn:hover{
   transform:translateY(-3px);
@@ -247,8 +241,13 @@ h1{
 <a class="btn" id="insta-link" href="https://www.instagram.com/luxury_location_de_voiture" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733558.png"><span id="txt-insta"></span></a>
 <a class="btn" id="tiktok-link" href="https://www.tiktok.com/@locationvoituredeluxe5" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png"><span id="txt-tiktok"></span></a>
 
+<a class="btn" id="snap-link" href="https://www.snapchat.com/add/oussama_oussi?share_id=wkBAxcb1UHQ&locale=fr-FR" target="_blank">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770814926/Screenshot_2026-02-11_140021_hf9s36.png">
+    <span id="txt-snap"></span>
+</a>
+
 <div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.23456789!2d2.966!3d36.699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQxJzU2LjQiTiAywrA1Nyc1Ny42IkU!5e0!3m2!1sfr!2sdz!4v123456789" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12803.961058097746!2d2.96919935!3d36.6987472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128faf7b6c80281b%3A0xc3f5e5b38e489547!2sBaba%20Hassen!5e0!3m2!1sfr!2sdz!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 
 <p id="footer"></p>
@@ -258,19 +257,19 @@ h1{
 const content={
 fr:{
 bio:"Confort, puissance et élégance<br><span class='slogan-translated'>Location de voitures de luxe • Livraison • Réservation</span>",
-wa:"WhatsApp",email:"Email",site:"Site officiel",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+wa:"WhatsApp",email:"Email",site:"Site officiel",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",snap:"Snapchat",
 footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
 msg:"Bonjour, je souhaite des informations sur la location de voitures de luxe."
 },
 ar:{
 bio:"كراء سيارات فاخرة ، قوة وأناقة ✨<br><span class='slogan-translated'>سيارات جديدة • خدمة راقية • حجز سريع</span>",
-wa:"واتساب",email:"البريد الإلكتروني",site:"الموقع الرسمي",fb:"فايسبوك",insta:"إنستغرام",tiktok:"تيك توك",
+wa:"واتساب",email:"البريد الإلكتروني",site:"الموقع الرسمي",fb:"فايسبوك",insta:"إنستغرام",tiktok:"تيك توك",snap:"سناب شات",
 footer:"Luxury Location • بابا حسن، الجزائر • 2026",dir:"rtl",
 msg:"السلام عليكم، حاب نستفسر على كراء السيارات الفاخرة."
 },
 en:{
 bio:"Luxury in motion combining comfort and elegance<br><span class='slogan-translated'>Premium luxury car rental</span>",
-wa:"WhatsApp",email:"Email",site:"Official website",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+wa:"WhatsApp",email:"Email",site:"Official website",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",snap:"Snapchat",
 footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
 msg:"Hello, I would like information about luxury car rental."
 }
@@ -285,6 +284,7 @@ const txtSite=document.getElementById("txt-site");
 const txtFb=document.getElementById("txt-fb");
 const txtInsta=document.getElementById("txt-insta");
 const txtTiktok=document.getElementById("txt-tiktok");
+const txtSnap=document.getElementById("txt-snap");
 const waLink=document.getElementById("wa-link");
 
 let lang = navigator.language.slice(0,2);
@@ -300,6 +300,7 @@ txtSite.innerText=content[l].site;
 txtFb.innerText=content[l].fb;
 txtInsta.innerText=content[l].insta;
 txtTiktok.innerText=content[l].tiktok;
+txtSnap.innerText=content[l].snap;
 waLink.href="https://wa.me/"+waNumber+"?text="+encodeURIComponent(content[l].msg);
 document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.remove("active"));
 document.getElementById("btn-"+l).classList.add("active");
@@ -307,7 +308,6 @@ document.getElementById("btn-"+l).classList.add("active");
 
 setLang(lang);
 
-// === Lightbox Functions ===
 function openLightbox(src) {
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
@@ -322,6 +322,3 @@ function closeLightbox() {
 </script>
 </body>
 </html>
-
-
-
