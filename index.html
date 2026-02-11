@@ -3,241 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Location | Baba Hassen</title>
+<title>Luxury Location</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --gold:#D4AF37;
-  --gold-dark:#B89B5E;
-  --gold-light:#F2E3B6;
-  --glass-bg: rgba(255,255,255,0.05);
-  --glass-border: rgba(255,255,255,0.2);
+  --gold:#D4AF37;
+  --gold-dark:#B89B5E;
+  --gold-light:#F2E3B6;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.2);
 }
 
 body{
-  min-height:100vh;
-  font-family:Poppins,system-ui;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(242,227,182,.15), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(184,155,94,.15), transparent 45%),
-    linear-gradient(-45deg,#D4AF37,#1a1604,#000000,#0B0B0B);
-  background-size:300% 300%;
-  animation:luxuryMove 10s ease-in-out infinite;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:20px;
+  min-height:100vh;
+  font-family:Poppins,system-ui;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(242,227,182,.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(184,155,94,.25), transparent 45%),
+    linear-gradient(-45deg,#D4AF37,#312706,#3c2a02,#0B0B0B);
+  background-size:300% 300%;
+  animation:luxuryMove 10s ease-in-out infinite;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
 }
-
 @keyframes luxuryMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 .container{
-  max-width:480px;
-  width:100%;
-  padding:36px 26px;
-  border-radius:26px;
-  background:rgba(0,0,0,.75);
-  border:1px solid var(--gold-dark);
-  backdrop-filter:blur(14px);
-  box-shadow:0 25px 60px rgba(0,0,0,.8);
-  text-align:center;
-  margin-bottom:30px;
+  max-width:480px;
+  width:100%;
+  padding:36px 26px;
+  border-radius:26px;
+  background:rgba(0,0,0,.65);
+  border:1px solid var(--gold-dark);
+  backdrop-filter:blur(14px);
+  box-shadow:0 25px 60px rgba(0,0,0,.7);
+  text-align:center;
+  margin-bottom:30px;
 }
 
 body[dir="rtl"]{direction:rtl}
 
 .logo{
-  width:120px;
-  border-radius:50%;
-  border:2px solid var(--gold);
-  margin:0 auto 20px auto;
-  display:block;
+  width:120px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  margin:0 auto 20px auto;
+  display:block;
 }
 
 h1{
-  color:var(--gold-light);
-  margin-bottom:10px;
-  letter-spacing: 1px;
+  color:var(--gold-light);
+  margin-bottom:10px;
 }
 
 .bio{
-  color:#dcdcdc;
-  font-size:14px;
-  line-height:1.8;
-  margin-bottom:25px;
+  color:#dcdcdc;
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:25px;
 }
 
 .slogan-translated{
-  display:block;
-  margin-top:6px;
-  color:var(--gold);
-  font-style:italic;
+  display:block;
+  margin-top:6px;
+  color:var(--gold);
+  font-style:italic;
 }
 
 .lang-switch{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:25px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:25px;
 }
 .lang-switch button{
-  background:transparent;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  padding:8px 18px;
-  border-radius:20px;
-  cursor:pointer;
-  transition:.3s;
-  font-weight: bold;
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:8px 20px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
 }
 .lang-switch button.active,
 .lang-switch button:hover{
-  background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  color:#141111;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:#141111;
 }
 
 /* === Image Carousel === */
 .scroll-wrapper{
-  width:100%;
-  border-radius:16px;
-  overflow:hidden;
-  position:relative;
-  margin:20px 0;
-  cursor: pointer;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  margin:20px 0;
+  cursor: pointer;
 }
 
 .scroll-track{
-  display:flex;
-  gap:10px;
-  animation:scroll 25s linear infinite;
+  display:flex;
+  gap:10px;
+  animation:scroll 20s linear infinite;
 }
 
+/* Pause animation on Hover */
 .scroll-wrapper:hover .scroll-track {
-  animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 .scroll-track img{
-  height:120px;
-  border-radius:16px;
-  flex:0 0 auto;
-  object-fit:cover;
-  transition: 0.3s;
+  height:120px;
+  border-radius:16px;
+  flex:0 0 auto;
+  object-fit:cover;
+  transition: 0.2s;
+}
+
+.scroll-track img:hover {
+    filter: brightness(1.2);
 }
 
 @keyframes scroll{
-  0% {transform: translateX(0);}
-  100% {transform: translateX(-50%);}
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
 }
 
-/* === Lightbox === */
+/* === Lightbox (Zoom Effect) === */
 .lightbox {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.95);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  cursor: zoom-out;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
 }
-.lightbox.active { display: flex; }
+
 .lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-  border: 2px solid var(--gold);
-  transform: scale(0.8);
-  transition: 0.3s;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 15px;
+  border: 2px solid var(--gold);
+  transform: scale(0.5);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.lightbox.active img { transform: scale(1); }
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox.active img {
+  transform: scale(1);
+}
 
 /* Buttons */
 .btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  margin:12px 0;
-  padding:15px 20px;
-  border-radius:34px;
-  text-decoration:none;
-  font-size:15px;
-  color:#fff;
-  background:var(--glass-bg);
-  border:1px solid var(--glass-border);
-  backdrop-filter:blur(8px);
-  transition:.35s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:12px 0;
+  padding:15px 20px;
+  border-radius:34px;
+  text-decoration:none;
+  font-size:15px;
+  color:#fff;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(8px);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
 }
 .btn img{width:24px;height:24px}
 
 .btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(212,175,55,0.3);
-  border-color:var(--gold);
-  background: rgba(212,175,55,0.1);
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(212,175,55,0.45);
+  border-color:var(--gold);
 }
 
 #footer{
-  color:#9a9a9a;
-  font-size:12px;
-  margin-top:25px;
+  color:#9a9a9a;
+  font-size:12px;
+  margin-top:25px;
 }
 
 .map-container{
-  width:100%;
-  height:200px;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:20px;
-  border: 1px solid var(--gold-dark);
+  width:100%;
+  height:250px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:20px;
 }
 </style>
 </head>
 <body>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="">
+    <img id="lightbox-img" src="">
 </div>
 
 <div class="container">
 <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711757/photo_5789882967944531100_x_1_iajil4.png" class="logo">
 
 <div class="lang-switch">
-  <button id="btn-fr" onclick="setLang('fr')">FR</button>
-  <button id="btn-ar" onclick="setLang('ar')">AR</button>
-  <button id="btn-en" onclick="setLang('en')">EN</button>
+  <button id="btn-fr" onclick="setLang('fr')">FR</button>
+  <button id="btn-ar" onclick="setLang('ar')">AR</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
 </div>
 
 <h1>Luxury Location</h1>
 <p id="bio" class="bio"></p>
 
 <div class="scroll-wrapper">
-  <div class="scroll-track">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg" onclick="openLightbox(this.src)">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg" onclick="openLightbox(this.src)">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531102_y_qogxby.jpg" onclick="openLightbox(this.src)">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531110_y_qoythz.jpg" onclick="openLightbox(this.src)">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg" onclick="openLightbox(this.src)">
-    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg" onclick="openLightbox(this.src)">
-  </div>
+  <div class="scroll-track">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531102_y_qogxby.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531110_y_qoythz.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531107_y_yqxfc0.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531108_y_affjmh.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531106_y_royl0l.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531109_y_ypl0q8.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711756/photo_5789882967944531105_y_xqaxeh.jpg" onclick="openLightbox(this.src)">
+    <img src="https://res.cloudinary.com/dv664dogt/image/upload/v1770711758/photo_5789882967944531104_y_ipihla.jpg" onclick="openLightbox(this.src)">
+  </div>
 </div>
 
 <a class="btn" id="wa-link" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png"><span id="txt-wa"></span></a>
-<a class="btn" id="snap-link" href="https://www.snapchat.com/add/oussama_oussi?share_id=wkBAxcb1UHQ&locale=fr-FR" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3991/3991775.png"><span id="txt-snap"></span></a>
+<a class="btn" id="email-link" href="mailto:Osmandz2019@gmail.com"><img src="https://cdn-icons-png.flaticon.com/128/281/281769.png"><span id="txt-email"></span></a>
+<a class="btn" id="site-link" href="https://luxury-location.vercel.app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/841/841364.png"><span id="txt-site"></span></a>
+<a class="btn" id="fb-link" href="https://www.facebook.com/share/17yRzySM8P/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733547.png"><span id="txt-fb"></span></a>
 <a class="btn" id="insta-link" href="https://www.instagram.com/luxury_location_de_voiture" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733558.png"><span id="txt-insta"></span></a>
 <a class="btn" id="tiktok-link" href="https://www.tiktok.com/@locationvoituredeluxe5" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png"><span id="txt-tiktok"></span></a>
-<a class="btn" id="fb-link" href="https://www.facebook.com/share/17yRzySM8P/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/733/733547.png"><span id="txt-fb"></span></a>
-<a class="btn" id="site-link" href="https://luxury-location.vercel.app" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/841/841364.png"><span id="txt-site"></span></a>
-<a class="btn" id="email-link" href="mailto:Osmandz2019@gmail.com"><img src="https://cdn-icons-png.flaticon.com/128/281/281769.png"><span id="txt-email"></span></a>
 
 <div class="map-container">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12803.957640306263!2d2.9696525!3d36.6507421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128faf9790d8174f%3A0xc6a83685f958f700!2sBaba%20Hassen!5e0!3m2!1sfr!2sdz!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.23456789!2d2.966!3d36.699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQxJzU2LjQiTiAywrA1Nyc1Ny42IkU!5e0!3m2!1sfr!2sdz!4v123456789" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 
 <p id="footer"></p>
@@ -247,58 +259,66 @@ h1{
 const content={
 fr:{
 bio:"Confort, puissance et élégance<br><span class='slogan-translated'>Location de voitures de luxe • Livraison • Réservation</span>",
-wa:"WhatsApp", snap:"Snapchat", email:"Email", site:"Site officiel", fb:"Facebook", insta:"Instagram", tiktok:"TikTok",
-footer:"Luxury Location • Baba Hassen, Algérie • 2026", dir:"ltr",
+wa:"WhatsApp",email:"Email",site:"Site officiel",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
 msg:"Bonjour, je souhaite des informations sur la location de voitures de luxe."
 },
 ar:{
 bio:"كراء سيارات فاخرة ، قوة وأناقة ✨<br><span class='slogan-translated'>سيارات جديدة • خدمة راقية • حجز سريع</span>",
-wa:"واتساب", snap:"سناب شات", email:"البريد الإلكتروني", site:"الموقع الرسمي", fb:"فايسبوك", insta:"إنستغرام", tiktok:"تيك توك",
-footer:"Luxury Location • بابا حسن، الجزائر • 2026", dir:"rtl",
+wa:"واتساب",email:"البريد الإلكتروني",site:"الموقع الرسمي",fb:"فايسبوك",insta:"إنستغرام",tiktok:"تيك توك",
+footer:"Luxury Location • بابا حسن، الجزائر • 2026",dir:"rtl",
 msg:"السلام عليكم، حاب نستفسر على كراء السيارات الفاخرة."
 },
 en:{
 bio:"Luxury in motion combining comfort and elegance<br><span class='slogan-translated'>Premium luxury car rental</span>",
-wa:"WhatsApp", snap:"Snapchat", email:"Email", site:"Official website", fb:"Facebook", insta:"Instagram", tiktok:"TikTok",
-footer:"Luxury Location • Baba Hassen, Algeria • 2026", dir:"ltr",
+wa:"WhatsApp",email:"Email",site:"Official website",fb:"Facebook",insta:"Instagram",tiktok:"TikTok",
+footer:"Luxury Location • Baba Hassen, Algeria • 2026",dir:"ltr",
 msg:"Hello, I would like information about luxury car rental."
 }
 };
 
 const waNumber="213559309680";
-const elements = ["bio", "footer", "txt-wa", "txt-snap", "txt-email", "txt-site", "txt-fb", "txt-insta", "txt-tiktok"];
+const bio=document.getElementById("bio");
+const footer=document.getElementById("footer");
+const txtWa=document.getElementById("txt-wa");
+const txtEmail=document.getElementById("txt-email");
+const txtSite=document.getElementById("txt-site");
+const txtFb=document.getElementById("txt-fb");
+const txtInsta=document.getElementById("txt-insta");
+const txtTiktok=document.getElementById("txt-tiktok");
+const waLink=document.getElementById("wa-link");
+
+let lang = navigator.language.slice(0,2);
+if(!["fr","ar","en"].includes(lang)) lang="fr";
 
 function setLang(l){
-    document.body.dir = content[l].dir;
-    document.getElementById("bio").innerHTML = content[l].bio;
-    document.getElementById("footer").innerText = content[l].footer;
-    document.getElementById("txt-wa").innerText = content[l].wa;
-    document.getElementById("txt-snap").innerText = content[l].snap;
-    document.getElementById("txt-email").innerText = content[l].email;
-    document.getElementById("txt-site").innerText = content[l].site;
-    document.getElementById("txt-fb").innerText = content[l].fb;
-    document.getElementById("txt-insta").innerText = content[l].insta;
-    document.getElementById("txt-tiktok").innerText = content[l].tiktok;
-    
-    document.getElementById("wa-link").href = "https://wa.me/"+waNumber+"?text="+encodeURIComponent(content[l].msg);
-    
-    document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.remove("active"));
-    document.getElementById("btn-"+l).classList.add("active");
+document.body.dir=content[l].dir;
+bio.innerHTML=content[l].bio;
+footer.innerText=content[l].footer;
+txtWa.innerText=content[l].wa;
+txtEmail.innerText=content[l].email;
+txtSite.innerText=content[l].site;
+txtFb.innerText=content[l].fb;
+txtInsta.innerText=content[l].insta;
+txtTiktok.innerText=content[l].tiktok;
+waLink.href="https://wa.me/"+waNumber+"?text="+encodeURIComponent(content[l].msg);
+document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.remove("active"));
+document.getElementById("btn-"+l).classList.add("active");
 }
 
-// Langue par défaut
-let defaultLang = navigator.language.slice(0,2);
-if(!["fr","ar","en"].includes(defaultLang)) defaultLang="fr";
-setLang(defaultLang);
+setLang(lang);
 
-// Lightbox
+// === Lightbox Functions ===
 function openLightbox(src) {
-    const lb = document.getElementById('lightbox');
-    document.getElementById('lightbox-img').src = src;
-    lb.classList.add('active');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    lbImg.src = src;
+    lb.classList.add('active');
 }
+
 function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('active');
 }
 </script>
 </body>
